@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion Configs.compileSdkVersion
+    buildToolsVersion Configs.buildToolsVersion
+    defaultConfig {
+        applicationId "ru.aviasales.u2626"
+        minSdkVersion Configs.minSdkVersion
+        targetSdkVersion Configs.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':core:autocomplete-api')
+
+    implementation Libraries.kotlin
+    implementation Libraries.kotlinCoroutinesCore
+    implementation Libraries.kotlinCoroutinesAndroid
+    implementation Libraries.appCompat
+    implementation Libraries.constraintLayout
+    implementation Libraries.okHttp
+    implementation Libraries.okHttpLoggingInterceptor
+    implementation Libraries.moshi
+    implementation Libraries.moshiKotlin
+    implementation Libraries.timber
+    implementation Libraries.firebaseCore
+    implementation Libraries.crashlytics
+    implementation Libraries.dagger
+    kapt Libraries.daggerCompiler
+    debugImplementation Libraries.leakCanary
+    debugImplementation Libraries.flipper
+    debugImplementation Libraries.soLoader
+}

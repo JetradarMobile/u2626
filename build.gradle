@@ -1,0 +1,31 @@
+apply plugin: 'com.github.ben-manes.versions'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath GradlePlugins.android
+        classpath GradlePlugins.kotlin
+        classpath GradlePlugins.googleServices
+        classpath GradlePlugins.crashlytics
+        classpath GradlePlugins.versions
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+apply from: 'gradle/versionsPluginConfig.gradle'

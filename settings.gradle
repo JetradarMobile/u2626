@@ -1,0 +1,4 @@
+rootProject.name='u2626'
+
+include ':app'
+include ':core:autocomplete-api'

@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation Libraries.kotlin
+    implementation Libraries.retrofit
+    implementation Libraries.retrofitMoshiConverter
+    implementation Libraries.okHttp
+    implementation Libraries.moshi
+    implementation Libraries.dagger
+    kapt Libraries.daggerCompiler
+}
