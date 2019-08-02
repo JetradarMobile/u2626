@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         coroutineScope.launch { autocomplete("mow") }
 
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.container, SelectAirportFragment.create())
+            replace(R.id.container, SelectAirportFragment.create(autocompleteApi))
             commit()
         }
     }

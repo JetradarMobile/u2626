@@ -30,14 +30,18 @@ dependencies {
     implementation Libraries.kotlinCoroutinesAndroid
     implementation Libraries.appCompat
     implementation Libraries.constraintLayout
+    implementation Libraries.coreKtx
     implementation Libraries.okHttp
     implementation Libraries.okHttpLoggingInterceptor
     implementation Libraries.moshi
     implementation Libraries.moshiKotlin
+    implementation Libraries.recyclerView
     implementation Libraries.timber
     implementation Libraries.firebaseCore
     implementation Libraries.crashlytics
     implementation Libraries.dagger
+    implementation Libraries.viewModelKtx
+    implementation Libraries.lifecycleExtensions
     kapt Libraries.daggerCompiler
     debugImplementation Libraries.leakCanary
     debugImplementation Libraries.flipper

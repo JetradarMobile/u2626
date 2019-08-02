@@ -15,6 +15,8 @@ object Versions {
     const val kotlinCoroutines = "1.3.0-RC"
     const val constraintLayout = "1.1.3"
     const val appCompat = "1.0.2"
+    const val coreKtx = "1.0.1"
+    const val recyclerView = "1.0.0"
     const val retrofit = "2.6.1"
     const val moshi = "1.8.0"
     const val rxJava = "2.2.10"
@@ -26,6 +28,7 @@ object Versions {
     const val timber = "4.7.1"
     const val firebaseCore = "17.0.1"
     const val crashlytics = "2.10.1"
+    const val viewModel = "2.2.0-alpha02"
 }
 
 object GradlePlugins {
@@ -42,6 +45,8 @@ object Libraries {
     val kotlinCoroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinCoroutines}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val retrofitRxJavaAdapter = "com.squareup.retrofit2:adapter-rxjava:${Versions.retrofit}"
     val retrofitMoshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
@@ -58,4 +63,6 @@ object Libraries {
     val timber = "com.jakewharton.timber:timber:${Versions.timber}"
     val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebaseCore}"
     val crashlytics = "com.crashlytics.sdk.android:crashlytics:${Versions.crashlytics}"
+    val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
+    val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.viewModel}"
 }
