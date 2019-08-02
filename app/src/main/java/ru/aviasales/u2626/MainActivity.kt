@@ -2,12 +2,11 @@ package ru.aviasales.u2626
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
 import ru.aviasales.core.autocomplete.AutocompleteApi
+import ru.aviasales.u2626.selectairport.SelectAirportFragment
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -20,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         injectDependencies()
         setContentView(R.layout.activity_main)
         coroutineScope.launch { autocomplete("mow") }
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.container, SelectAirportFragment.create())
+            commit()
+        }
     }
 
     override fun onDestroy() {
@@ -34,7 +38,6 @@ class MainActivity : AppCompatActivity() {
     private suspend fun autocomplete(term: String) {
         try {
             val response = autocompleteApi.autocomplete(term, "ru")
-            textView.text = response.cities.first().fullName
             Timber.d(response.cities.joinToString(separator = "\n"))
         } catch (error: Throwable) {
             Timber.e(error, "Failed to execute autocomplete request")
