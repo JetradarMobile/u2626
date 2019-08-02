@@ -2,29 +2,21 @@ package ru.aviasales.u2626
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
 import ru.aviasales.core.autocomplete.AutocompleteApi
 import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     @Inject lateinit var autocompleteApi: AutocompleteApi
-    private val coroutineScope = MainScope()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injectDependencies()
         setContentView(R.layout.activity_main)
-        coroutineScope.launch { autocomplete("mow") }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        coroutineScope.cancel()
+        lifecycleScope.launch { autocomplete("mow") }
     }
 
     private fun injectDependencies() {

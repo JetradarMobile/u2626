@@ -30,6 +30,7 @@ dependencies {
     implementation Libraries.kotlinCoroutinesAndroid
     implementation Libraries.appCompat
     implementation Libraries.constraintLayout
+    implementation Libraries.lifecycleRuntimeKtx
     implementation Libraries.okHttp
     implementation Libraries.okHttpLoggingInterceptor
     implementation Libraries.moshi
