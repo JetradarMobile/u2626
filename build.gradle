@@ -28,4 +28,4 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-apply from: 'gradle/versions-plugin-config.gradle'
+apply from: 'gradle/versionsPluginConfig.gradle'
