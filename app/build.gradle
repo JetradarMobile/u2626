@@ -32,6 +32,7 @@ dependencies {
     implementation Libraries.constraintLayout
     implementation Libraries.coreKtx
     implementation Libraries.okHttp
+    implementation Libraries.okHttpBrotli
     implementation Libraries.okHttpLoggingInterceptor
     implementation Libraries.moshi
     implementation Libraries.moshiKotlin
