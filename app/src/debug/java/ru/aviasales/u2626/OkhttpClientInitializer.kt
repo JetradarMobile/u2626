@@ -7,6 +7,8 @@ import com.facebook.flipper.plugins.network.NetworkFlipperPlugin
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.logging.HttpLoggingInterceptor.Level
+import okhttp3.logging.HttpLoggingInterceptor.Logger
 import timber.log.Timber
 
 object OkhttpClientInitializer {
@@ -18,11 +20,11 @@ object OkhttpClientInitializer {
     }
 
     private fun okHttpLoggingInterceptor(): Interceptor =
-        HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
+        HttpLoggingInterceptor(object : Logger {
             override fun log(message: String) {
                 Timber.tag("OkHttp").d(message)
             }
-        }).apply { level = HttpLoggingInterceptor.Level.BASIC }
+        }).apply { level = Level.BASIC }
 
     private fun flipperOkHttpInterceptor(context: Context): Interceptor =
         FlipperOkhttpInterceptor(
